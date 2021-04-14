@@ -4,7 +4,7 @@
     <!-- Reference base shared framework at incoming dependency flow version, not bundled sdk version. -->
     <FrameworkReference
       Update="Microsoft.NETCore.App"
-      Condition=" '$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)' AND '$(TargetLatestDotNetRuntime)' != 'false' "
+      Condition=" (('$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)') OR ('$(TargetFramework)' == '$(DefaultNetCoreTargetFramework)-windows')) AND '$(TargetLatestDotNetRuntime)' != 'false' "
       RuntimeFrameworkVersion="$(MicrosoftNETCoreAppRuntimeVersion)"
       TargetingPackVersion="$(MicrosoftNETCoreAppRefVersion)" />
   </ItemGroup>
